@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gamePage>
+  <content><![CDATA[
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+  <meta charset="utf-8"/>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=yes"/>
+  <title>Obby</title>
+  <link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/unknownsowner/imagebackground/UnknownsFavicon.png"/>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/papamamia/sers@main/TemplateData/style.css"/>
+
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      background-image: url('https://cdn.jsdelivr.net/gh/unknownsowner/imagebackground/Untitled%20design.png');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+
+    #loading-screen {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: url('https://cdn.jsdelivr.net/gh/unknownsowner/imagebackground/Untitled%20design.png') no-repeat center center;
+      background-size: cover;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      z-index: 9999;
+    }
+
+    #loading-screen img {
+      width: 150px;
+      height: 150px;
+      margin-bottom: 20px;
+    }
+
+    #loading-bar {
+      width: 300px;
+      height: 20px;
+      background-color: #333;
+      border-radius: 10px;
+      overflow: hidden;
+    }
+
+    #loading-progress {
+      height: 100%;
+      width: 0%;
+      background-color: #00ffcc;
+      transition: width 7s linear;
+    }
+
+    #unity-container {
+      display: none;
+    }
+  </style>
+
+  <script>
+    function startLoading() {
+      document.getElementById("loading-progress").style.width = "100%";
+      setTimeout(function() {
+        document.getElementById("loading-screen").style.display = "none";
+        document.getElementById("unity-container").style.display = "block";
+      }, 7000);
+    }
+  </script>
+</head>
+
+<body onload="startLoading();">
+  <!-- Custom loading screen -->
+  <div id="loading-screen">
+    <img src="https://cdn.jsdelivr.net/gh/unknownsowner/imagebackground/UnknownsFavicon.png" alt="Loading Icon" />
+    <div id="loading-bar">
+      <div id="loading-progress"></div>
+    </div>
+  </div>
+
+  <!-- Unity canvas -->
+  <div id="unity-container">
+    <canvas id="unity-canvas" tabindex="-1"></canvas>
+    <div id="unity-loading-bar">
+      <div id="unity-logo"></div>
+      <div id="unity-progress-bar-empty">
+        <div id="unity-progress-bar-full"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Unity loader script -->
+  <script src="https://cdn.jsdelivr.net/gh/papamamia/sers@main/unityApp.js"></script>
+
+  <!-- Blur focus blocker -->
+  <script>
+    if (!window.blurFocusHandlersInstalled) {
+      window.addEventListener('blur', function () {
+        let blockerButton = document.createElement('button');
+        blockerButton.style.position = 'fixed';
+        blockerButton.style.top = '0';
+        blockerButton.style.left = '0';
+        blockerButton.style.width = '100%';
+        blockerButton.style.height = '100%';
+        blockerButton.style.zIndex = '9999';
+        blockerButton.style.backgroundColor = 'rgba(0, 0, 0, 0)';
+        blockerButton.style.border = 'none';
+        blockerButton.style.cursor = 'default';
+        document.body.appendChild(blockerButton);
+        function removeBlocker() {
+          if (blockerButton && blockerButton.parentNode) {
+            blockerButton.parentNode.removeChild(blockerButton);
+          }
+          window.removeEventListener('focus', removeBlocker);
+        }
+        window.addEventListener('focus', removeBlocker);
+      });
+      window.blurFocusHandlersInstalled = true;
+    }
+  </script>
+</body>
+</html>
+  ]]></content>
+</gamePage>
