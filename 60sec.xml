@@ -1,20 +1,94 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <gamePage>
   <content><![CDATA[
+<!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="utf-8" />
-    <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, shrink-to-fit=no" />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/AndreajnRcm4/b398dl2h74v@9a23fbb2373d743a564873251cbb57736ebc1f73/style.css" type="text/css" />
-    
-</head>
-<body>
-<script src="https://cdn.jsdelivr.net/gh/u-cvlassrom-y/google@main/ruffle.js"></script>
+  <meta charset="utf-8" />
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, shrink-to-fit=no" />
+  <title>60 Second Burger Run</title>
+  <link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/unknownsowner/imagebackground/UnknownsFavicon.png" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/AndreajnRcm4/b398dl2h74v@9a23fbb2373d743a564873251cbb57736ebc1f73/style.css" type="text/css" />
 
-<object width="100%" height="100%">
-    <param name="movie" value="https://cdn.jsdelivr.net/gh/gamelist1990/Interstellar@9318db26a2fdc0fc0b7ddaba17c08a027304277b/public/play/60-second-burger-run/60secondsburgerrun.swf">
-    <embed src="https://cdn.jsdelivr.net/gh/gamelist1990/Interstellar@9318db26a2fdc0fc0b7ddaba17c08a027304277b/public/play/60-second-burger-run/60secondsburgerrun.swf" width="100%" height="100%">
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      background: url('https://cdn.jsdelivr.net/gh/unknownsowner/imagebackground@main/Untitled%20design.png') no-repeat center center;
+      background-size: cover;
+    }
+
+    #loading-screen {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: url('https://cdn.jsdelivr.net/gh/unknownsowner/imagebackground@main/Untitled%20design.png') no-repeat center center;
+      background-size: cover;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      z-index: 9999;
+    }
+
+    #loading-screen img {
+      width: 150px;
+      height: 150px;
+      margin-bottom: 20px;
+    }
+
+    #loading-bar {
+      width: 300px;
+      height: 20px;
+      background-color: #333;
+      border-radius: 10px;
+      overflow: hidden;
+    }
+
+    #loading-progress {
+      height: 100%;
+      width: 0%;
+      background-color: #00ffcc;
+      transition: width 7s linear;
+    }
+
+    #game-object {
+      display: none;
+    }
+  </style>
+
+  <script>
+    function startLoading() {
+      document.getElementById("loading-progress").style.width = "100%";
+      setTimeout(function() {
+        document.getElementById("loading-screen").style.display = "none";
+        document.getElementById("game-object").style.display = "block";
+      }, 7000);
+    }
+  </script>
+</head>
+
+<body onload="startLoading();">
+  <!-- Custom loading screen -->
+  <div id="loading-screen">
+    <img src="https://cdn.jsdelivr.net/gh/unknownsowner/imagebackground/UnknownsFavicon.png" alt="Loading Icon" />
+    <div id="loading-bar">
+      <div id="loading-progress"></div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/gh/u-cvlassrom-y/google@main/ruffle.js"></script>
+
+  <!-- Game embed -->
+  <div id="game-object">
+    <object width="100%" height="100%">
+      <param name="movie" value="https://cdn.jsdelivr.net/gh/gamelist1990/Interstellar@9318db26a2fdc0fc0b7ddaba17c08a027304277b/public/play/60-second-burger-run/60secondsburgerrun.swf">
+      <embed src="https://cdn.jsdelivr.net/gh/gamelist1990/Interstellar@9318db26a2fdc0fc0b7ddaba17c08a027304277b/public/play/60-second-burger-run/60secondsburgerrun.swf" width="100%" height="100%">
+    </object>
+  </div>
 </body>
-</html>  ]]></content>
+</html>
+ ]]></content>
 </gamePage>
