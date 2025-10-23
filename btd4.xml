@@ -1,0 +1,76 @@
+<Module>
+<ModulePrefs title="Google.com" />
+<Content type="html"><![CDATA[
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, shrink-to-fit=no" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/AndreajnRcm4/b398dl2h74v@9a23fbb2373d743a564873251cbb57736ebc1f73/style.css" type="text/css" />
+
+  <!-- ✅ Custom Loading Screen Styles -->
+  <link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/unknownsowner/imagebackground/UnknownsFavicon.png" />
+  <style>
+    #custom-loading-screen {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: url('https://cdn.jsdelivr.net/gh/unknownsowner/imagebackground@main/Untitled%20design.png') no-repeat center center;
+      background-size: cover;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      z-index: 99999;
+    }
+    #custom-loading-screen img {
+      width: 150px;
+      height: 150px;
+      margin-bottom: 20px;
+    }
+    #custom-loading-bar {
+      width: 300px;
+      height: 20px;
+      background-color: #333;
+      border-radius: 10px;
+      overflow: hidden;
+    }
+    #custom-loading-progress {
+      height: 100%;
+      width: 0%;
+      background-color: #00ffcc;
+      transition: width 7s linear;
+    }
+  </style>
+  <script>
+    function startCustomLoading() {
+      document.getElementById("custom-loading-progress").style.width = "100%";
+      setTimeout(function () {
+        const loader = document.getElementById("custom-loading-screen");
+        if (loader) loader.style.display = "none";
+      }, 7000);
+    }
+  </script>
+</head>
+
+<body onload="startCustomLoading();">
+  <!-- ✅ Custom Loading Screen -->
+  <div id="custom-loading-screen">
+    <img src="https://cdn.jsdelivr.net/gh/unknownsowner/imagebackground/UnknownsFavicon.png" alt="Loading Icon" />
+    <div id="custom-loading-bar">
+      <div id="custom-loading-progress"></div>
+    </div>
+  </div>
+
+  <!-- ✅ Original Game Embed -->
+  <script src="https://cdn.jsdelivr.net/gh/u-cvlassrom-y/google@main/ruffle.js"></script>
+  <object width="100%" height="100%">
+    <param name="movie" value="https://cdn.jsdelivr.net/gh/QiProject/flash-games@8a30ea684498b868a7b1cd188bd860ba2042eb56/Bloons-Tower-Defense-4.swf">
+    <embed src="https://cdn.jsdelivr.net/gh/QiProject/flash-games@8a30ea684498b868a7b1cd188bd860ba2042eb56/Bloons-Tower-Defense-4.swf" width="100%" height="100%">
+  </object>
+</body>
+</html>
+
+]]></Content>
+</Module>
