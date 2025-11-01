@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gamePage>
+  <content><![CDATA[
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>OvO 2</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+  <meta name="generator" content="Construct 3">
+
+  <!-- ✅ Updated Icon -->
+  <link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/unknownsowner/imagebackground/UOIcon.png" />
+  <link rel="manifest" href="https://cdn.jsdelivr.net/gh/ov464534asa4rb/786132@main/appmanifest.json">
+  <link rel="apple-touch-icon" sizes="128x128" href="icons/icon-128.png">
+  <link rel="apple-touch-icon" sizes="256x256" href="https://cdn.jsdelivr.net/gh/ov464534asa4rb/786132@main/icons/icon-256.png">
+  <link rel="apple-touch-icon" sizes="512x512" href="https://cdn.jsdelivr.net/gh/ov464534asa4rb/786132@main/icons/icon-512.png">
+  <link rel="icon" type="image/png" href="https://cdn.jsdelivr.net/gh/ov464534asa4rb/786132@main/icons/icon-512.png">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/ov464534asa4rb/786132@main/style.css">
+
+  <!-- ✅ Custom Loading Screen Styles -->
+  <style>
+    #custom-loading-screen {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: url('https://cdn.jsdelivr.net/gh/unknownsowner/imagebackground@main/Untitled%20design.png') no-repeat center center;
+      background-size: cover;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      z-index: 99999;
+    }
+    #custom-loading-screen img {
+      width: 150px;
+      height: 150px;
+      margin-bottom: 20px;
+    }
+    #custom-loading-bar {
+      width: 300px;
+      height: 20px;
+      background-color: #333;
+      border-radius: 10px;
+      overflow: hidden;
+    }
+    #custom-loading-progress {
+      height: 100%;
+      width: 0%;
+      background-color: #00ffcc;
+      transition: width 7s linear;
+    }
+  </style>
+  <script>
+    function startCustomLoading() {
+      document.getElementById("custom-loading-progress").style.width = "100%";
+      setTimeout(function () {
+        const loader = document.getElementById("custom-loading-screen");
+        if (loader) loader.style.display = "none";
+      }, 7000);
+    }
+  </script>
+</head>
+
+<body onload="startCustomLoading();">
+  <!-- ✅ Custom Loading Screen -->
+  <div id="custom-loading-screen">
+    <img src="https://cdn.jsdelivr.net/gh/unknownsowner/imagebackground/UOIcon.png" alt="Loading Icon" />
+    <div id="custom-loading-bar">
+      <div id="custom-loading-progress"></div>
+    </div>
+  </div>
+
+  <!-- ✅ Original Game Content -->
+  <div id="fb-root"></div>
+  <noscript>
+    <div id="notSupportedWrap">
+      <h2 id="notSupportedTitle">This content requires JavaScript</h2>
+      <p class="notSupportedMessage">JavaScript appears to be disabled. Please enable it to view this content.</p>
+      <p class="notSupportedMessage">This content was developed in Construct 3. <a href="https://www.construct.net/en">Create games online</a></p>
+    </div>
+  </noscript>
+
+  <script src="https://cdn.jsdelivr.net/gh/ov464534asa4rb/786132@main/scripts/supportcheck.js"></script>
+  <script src="https://cdn.jsdelivr.net/gh/ov464534asa4rb/786132@main/scripts/offlineclient.js"></script>
+  <script src="https://cdn.jsdelivr.net/gh/ov464534asa4rb/786132@main/scripts/main.js"></script>
+  <script src="https://cdn.jsdelivr.net/gh/ov464534asa4rb/786132@main/scripts/register-sw.js"></script>
+</body>
+</html>
+  ]]></content>
+</gamePage>
