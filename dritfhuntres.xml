@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gamePage>
+  <content><![CDATA[
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" href="hot.jpg">
+  <title>SUPERHOT</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/3kh0/3kh0-lite@d5cf6bb79a6427ada99e7f2e31425325f454565d/projects/superhot/styles.css" />
+
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      overflow: hidden;
+      background: #000;
+    }
+    #custom-loading-screen {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: url('https://cdn.jsdelivr.net/gh/unknownsowner/imagebackground@main/Untitled%20design.png') no-repeat center center;
+      background-size: cover;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      z-index: 99999;
+    }
+    #custom-loading-screen img {
+      width: 150px;
+      height: 150px;
+      margin-bottom: 20px;
+    }
+    #custom-loading-bar {
+      width: 300px;
+      height: 20px;
+      background-color: #333;
+      border-radius: 10px;
+      overflow: hidden;
+    }
+    #custom-loading-progress {
+      height: 100%;
+      width: 0%;
+      background-color: #00ffcc;
+      transition: width 7s linear;
+    }
+  </style>
+
+  <script>
+    function startCustomLoading() {
+      document.getElementById("custom-loading-progress").style.width = "100%";
+      setTimeout(function () {
+        const loader = document.getElementById("custom-loading-screen");
+        if (loader) loader.style.display = "none";
+      }, 7000);
+    }
+  </script>
+</head>
+
+<body style="margin: 0;" onload="startCustomLoading();">
+  <div id="custom-loading-screen">
+    <img src="https://cdn.jsdelivr.net/gh/unknownsowner/imagebackground/UOIcon.png" alt="Loading Icon" />
+    <div id="custom-loading-bar">
+      <div id="custom-loading-progress"></div>
+    </div>
+  </div>
+
+<base href="https://cdn.jsdelivr.net/gh/bubbls/UGS-Assets@main/drift-hunters/">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>Google</title>
+    <meta name="description" content="Drift Hunters is an online 3D car drifting game. Race on multiple challenging racetracks and customize your cars.">
+    <script type="text/javascript" src="/cloak.js"></script>
+  <meta name="robots" content="noindex,nofollow" />
+    <style>
+      body {
+  margin: 0;
+  padding: 0;
+}
+.webgl-content * {
+  border: 0;
+  margin: 0;
+  padding: 0;
+}
+.webgl-content {
+  position: absolute;
+}
+.webgl-content,
+#gameContainer,
+#unityContainer,
+canvas {
+  width: 100% !important;
+  height: 100% !important;
+}
+.webgl-content .logo,
+.progress {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+.webgl-content .logo {
+  background: url("progressLogo.Light.png") no-repeat center/contain;
+  width: 354px;
+  height: 130px;
+}
+.webgl-content .progress {
+  height: 18px;
+  width: 141px;
+  margin-top: 90px;
+}
+.webgl-content .progress .empty {
+  background: url("progressEmpty.Light.png") no-repeat right/cover;
+  float: right;
+  width: 100%;
+  height: 100%;
+  display: inline-block;
+}
+.webgl-content .progress .full {
+  background: url("progressFull.Light.png") no-repeat left/cover;
+  float: left;
+  width: 0%;
+  height: 100%;
+  display: inline-block;
+}
+.webgl-content .logo.Dark {
+  background-image: url(progressLogo.Dark.png);
+}
+.webgl-content .progress.Dark .empty {
+  background-image: url(progressEmpty.Dark.png);
+}
+.webgl-content .progress.Dark .full {
+  background-image: url(progressFull.Dark.png);
+}
+.webgl-content .footer {
+  margin-top: 5px;
+  height: 38px;
+  line-height: 38px;
+  font-family: Helvetica, Verdana, Arial, sans-serif;
+  font-size: 18px;
+}
+.webgl-content .footer .webgl-logo,
+.title,
+.fullscreen {
+  height: 100%;
+  display: inline-block;
+  background: transparent center no-repeat;
+}
+.webgl-content .footer .webgl-logo {
+  background-image: url(webgl-logo.png);
+  width: 204px;
+  float: left;
+}
+.webgl-content .footer .title {
+  margin-right: 10px;
+  float: right;
+}
+.webgl-content .footer .fullscreen {
+  background-image: url(fullscreen.png);
+  width: 38px;
+  float: right;
+}
+    </style>
+  </head>
+  <body style="margin: 0 auto; overflow: hidden">
+  
+  
+    <div class="webgl-content">
+      <div id="gameContainer" style="width: 100%; height: 100%; margin: 0;"></div>
+  </div>
+    
+  </body>
+  <script src="UnityLoader2019.js"></script>
+  <script>
+  
+    var gameInstance = UnityLoader.instantiate("gameContainer", "dh.json");
+
+    function UnityProgress(gameInstance, progress) {
+      if (!gameInstance.Module) {
+        return;
+      }
+
+    }
+  </script> </body>
+</html>
+  ]]></content>
+</gamePage>
