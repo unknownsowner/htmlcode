@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" href="hot.jpg">
+  <title>Aboutblank</title>
+  <link rel="stylesheet" href="UnknownsOwnersbootyShakingVelocityIsSoIntenseItCausesTheUniverseToCollapseMakingTheNewBiggestBlackhole.css" />
+
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      overflow: hidden;
+      background: #000;
+    }
+    #custom-loading-screen {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: url('https://cdn.jsdelivr.net/gh/unknownsowner/imagebackground@main/Untitled%20design.png') no-repeat center center;
+      background-size: cover;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      z-index: 99999;
+    }
+    #custom-loading-screen img {
+      width: 150px;
+      height: 150px;
+      margin-bottom: 20px;
+    }
+    #custom-loading-bar {
+      width: 300px;
+      height: 20px;
+      background-color: #333;
+      border-radius: 10px;
+      overflow: hidden;
+    }
+    #custom-loading-progress {
+      height: 100%;
+      width: 0%;
+      background-color: #00ffcc;
+      transition: width 7s linear;
+    }
+  </style>
+
+  <script>
+    function startCustomLoading() {
+      document.getElementById("custom-loading-progress").style.width = "100%";
+      setTimeout(function () {
+        const loader = document.getElementById("custom-loading-screen");
+        if (loader) loader.style.display = "none";
+      }, 7000);
+    }
+  </script>
+</head>
+
+<body style="margin: 0;" onload="startCustomLoading();">
+  <div id="custom-loading-screen">
+    <img src="https://cdn.jsdelivr.net/gh/unknownsowner/imagebackground/UOIcon.png" alt="Loading Icon" />
+    <div id="custom-loading-bar">
+      <div id="custom-loading-progress"></div>
+    </div>
+  </div>
+
+<html lang="en-us"><head></head><body class="dark"><module>
+<moduleprefs title="Google.com">
+<content type="html"><!--[CDATA[
+
+
+<!DOCTYPE html-->
+
+  
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>Sniper Shot</title>
+    <link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/namesvalue-gmes/oh@main/TemplateData/favicon.ico">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/namesvalue-gmes/oh@main/TemplateData/style.css">
+    <meta name="robots" content="noindex,nofollow">
+  
+  
+    <div id="unity-container" class="unity-desktop">
+      <canvas id="unity-canvas" width="798" height="527" style="background: url(&quot;https://cdn.jsdelivr.net/gh/namesvalue-gmes/oh@main/background.jpg&quot;) center center / cover; cursor: default;"></canvas>
+    </div>
+    <div id="loading-cover" style="display: none;">
+      <div id="unity-loading-bar">
+        <div id="unity-logo"><img src="https://cdn.jsdelivr.net/gh/namesvalue-gmes/oh@main/logo.png"></div>
+        <div id="unity-progress-bar-empty" style="">
+          <div id="unity-progress-bar-full" style="width: 100%;"></div>
+        </div>
+        <div class="spinner" style="display: none;"></div>
+      </div>
+    </div>
+    <div id="unity-fullscreen-button" style="display: none;"></div>
+    <script id="gamedistribution-jssdk" src="/adin.min.js"></script><script>
+      const hideFullScreenButton = "1";
+      const buildUrl = "https://cdn.jsdelivr.net/gh/namesvalue-gmes/oh@main/Build/";
+      const loaderUrl = buildUrl + "/SniperShot_GD.loader.js";
+      const config = {
+        dataUrl: buildUrl + "/SniperShot_GD.data.unityweb",
+        frameworkUrl: buildUrl + "/SniperShot_GD.framework.js.unityweb",
+        codeUrl: buildUrl + "/SniperShot_GD.wasm.unityweb",
+        streamingAssetsUrl: "StreamingAssets",
+        companyName: "GoGoMan",
+        productName: "Sniper Shot",
+        productVersion: "0.7",
+      };
+
+      const container = document.querySelector("#unity-container");
+      const canvas = document.querySelector("#unity-canvas");
+      const loadingCover = document.querySelector("#loading-cover");
+      const progressBarEmpty = document.querySelector("#unity-progress-bar-empty");
+      const progressBarFull = document.querySelector("#unity-progress-bar-full");
+      const fullscreenButton = document.querySelector("#unity-fullscreen-button");
+      const spinner = document.querySelector('.spinner');
+
+      const canFullscreen = (function() {
+        for (const key of [
+            'exitFullscreen',
+            'webkitExitFullscreen',
+            'webkitCancelFullScreen',
+            'mozCancelFullScreen',
+            'msExitFullscreen',
+          ]) {
+          if (key in document) {
+            return true;
+          }
+        }
+        return false;
+      }());
+
+      if (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)) {
+        container.className = "unity-mobile";
+        config.devicePixelRatio = 1;
+      }
+      canvas.style.background = "url('https://cdn.jsdelivr.net/gh/namesvalue-gmes/oh@main/background.jpg') center / cover";
+      loadingCover.style.display = "";
+
+      const script = document.createElement("script");
+      script.src = loaderUrl;
+      script.onload = () => {
+        createUnityInstance(canvas, config, (progress) => {
+          spinner.style.display = "none";
+          progressBarEmpty.style.display = "";
+          progressBarFull.style.width = `${100 * progress}%`;
+        }).then((unityInstance) => {
+          loadingCover.style.display = "none";
+          if (canFullscreen) {
+            if (!hideFullScreenButton) {
+              fullscreenButton.style.display = "";
+            }
+            fullscreenButton.onclick = () => {
+              unityInstance.SetFullscreen(1);
+            };
+          }
+        }).catch((message) => {
+          alert(message);
+        });
+      };
+      document.body.appendChild(script);
+    </script>
+  
+
+
+
+
+]]&gt;</content>
+</moduleprefs></module><script src="https://cdn.jsdelivr.net/gh/namesvalue-gmes/oh@main/Build//SniperShot_GD.loader.js"></script>
+<script src="blob:https://2128314278-atari-embeds.googleusercontent.com/8f2eecd2-d0c4-45f8-ac34-506307a5b254"></script></body></html>
