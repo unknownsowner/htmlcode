@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" href="hot.jpg">
+  <title>Aboutblank</title>
+  <link rel="stylesheet" href="UnknownsOwnersbootyShakingVelocityIsSoIntenseItCausesTheUniverseToCollapseMakingTheNewBiggestBlackhole.css" />
+
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      overflow: hidden;
+      background: #000;
+    }
+    #custom-loading-screen {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: url('https://cdn.jsdelivr.net/gh/unknownsowner/imagebackground@main/Untitled%20design.png') no-repeat center center;
+      background-size: cover;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      z-index: 99999;
+    }
+    #custom-loading-screen img {
+      width: 150px;
+      height: 150px;
+      margin-bottom: 20px;
+    }
+    #custom-loading-bar {
+      width: 300px;
+      height: 20px;
+      background-color: #333;
+      border-radius: 10px;
+      overflow: hidden;
+    }
+    #custom-loading-progress {
+      height: 100%;
+      width: 0%;
+      background-color: #00ffcc;
+      transition: width 7s linear;
+    }
+  </style>
+
+  <script>
+    function startCustomLoading() {
+      document.getElementById("custom-loading-progress").style.width = "100%";
+      setTimeout(function () {
+        const loader = document.getElementById("custom-loading-screen");
+        if (loader) loader.style.display = "none";
+      }, 7000);
+    }
+  </script>
+</head>
+
+<body style="margin: 0;" onload="startCustomLoading();">
+  <div id="custom-loading-screen">
+    <img src="https://cdn.jsdelivr.net/gh/unknownsowner/imagebackground/UOIcon.png" alt="Loading Icon" />
+    <div id="custom-loading-bar">
+      <div id="custom-loading-progress"></div>
+    </div>
+  </div>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/paigerodeghero/academicwebsite@897c910c65e6c68b04c44a6b6eba0b99d0f2f2cf/TemplateData/style.css"> <script src="https://cdn.jsdelivr.net/gh/paigerodeghero/academicwebsite@897c910c65e6c68b04c44a6b6eba0b99d0f2f2cf/TemplateData/UnityProgress.js"></script> <script src="https://cdn.jsdelivr.net/gh/gertdoro/UnityBookPage@d022f9378a6b8608796253add7a654c14920f454/Assets/Book-Page%20Curl/sprites/tabs.js"></script> <script> var gameInstance = UnityLoader.instantiate("gameContainer", "https://cdn.jsdelivr.net/gh/gertdoro/UnityBookPage@d022f9378a6b8608796253add7a654c14920f454/Assets/Book-Page%20Curl/sprites/tabs.json", {onProgress: UnityProgress,Module:{onRuntimeInitialized: function() {UnityProgress(gameInstance, "complete")}}}); </script> <script src=""></script> <div class="webgl-content"> <div id="gameContainer" style="width: 100vw; height: 100vh"></div> </div>
