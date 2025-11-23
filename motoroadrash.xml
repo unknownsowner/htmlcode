@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gamePage>
+  <content><![CDATA[
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" href="hot.jpg">
+  <title>Aboutblank</title>
+  <link rel="stylesheet" href="UnknownsOwnersbootyShakingVelocityIsSoIntenseItCausesTheUniverseToCollapseMakingTheNewBiggestBlackhole.css" />
+
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      overflow: hidden;
+      background: #000;
+    }
+    #custom-loading-screen {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: url('https://cdn.jsdelivr.net/gh/unknownsowner/imagebackground@main/Untitled%20design.png') no-repeat center center;
+      background-size: cover;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      z-index: 99999;
+    }
+    #custom-loading-screen img {
+      width: 150px;
+      height: 150px;
+      margin-bottom: 20px;
+    }
+    #custom-loading-bar {
+      width: 300px;
+      height: 20px;
+      background-color: #333;
+      border-radius: 10px;
+      overflow: hidden;
+    }
+    #custom-loading-progress {
+      height: 100%;
+      width: 0%;
+      background-color: #00ffcc;
+      transition: width 7s linear;
+    }
+  </style>
+
+  <script>
+    function startCustomLoading() {
+      document.getElementById("custom-loading-progress").style.width = "100%";
+      setTimeout(function () {
+        const loader = document.getElementById("custom-loading-screen");
+        if (loader) loader.style.display = "none";
+      }, 7000);
+    }
+  </script>
+</head>
+
+<body style="margin: 0;" onload="startCustomLoading();">
+  <div id="custom-loading-screen">
+    <img src="https://cdn.jsdelivr.net/gh/unknownsowner/imagebackground/UOIcon.png" alt="Loading Icon" />
+    <div id="custom-loading-bar">
+      <div id="custom-loading-progress"></div>
+    </div>
+  </div>
+<html>
+
+
+<html lang="en-us">
+  <base href="https://cdn.jsdelivr.net/gh/bubbls/UGS-Assets@c48a116edd88e1aa293844c8b806a8a4ea36d214/moto%20road%20rash/"> 
+<head>
+  <meta charset="utf-8">
+  <title>Moto Road Rash 3D</title>
+  <meta name="robots" content="noindex,nofollow" />
+  <link rel="shortcut icon" href="style/favicon.ico">
+  <link rel="stylesheet" href="style/style.css">
+
+  <!-- Unity scripts -->
+  <script src="UnityLoader.js"></script>
+  <script src="UnityProgress.js"></script>
+
+  <script>
+    // --- utility to merge split parts ---
+    function mergeFiles(fileParts) {
+      return new Promise((resolve, reject) => {
+        let buffers = [];
+        function fetchPart(i) {
+          if (i >= fileParts.length) {
+            let mergedBlob = new Blob(buffers);
+            let mergedUrl = URL.createObjectURL(mergedBlob);
+            resolve(mergedUrl);
+            return;
+          }
+          fetch(fileParts[i])
+            .then(r => r.arrayBuffer())
+            .then(data => {
+              buffers.push(data);
+              fetchPart(i + 1);
+            })
+            .catch(reject);
+        }
+        fetchPart(0);
+      });
+    }
+
+    function getParts(file, start, end) {
+      let arr = [];
+      for (let i = start; i <= end; i++) {
+        arr.push(file + ".part" + i);
+      }
+      return arr;
+    }
+
+    function resizeUnityContainer() {
+      var container = document.getElementById("gameContainer");
+      container.style.width = window.innerWidth + "px";
+      container.style.height = window.innerHeight + "px";
+    }
+
+    window.addEventListener('resize', resizeUnityContainer);
+
+    // ---- MAIN LOADER ----
+    window.addEventListener("load", function () {
+      // 1. Load the original JSON config
+      fetch("build.json")
+        .then(r => r.json())
+        .then(config => {
+          // 2. Merge split .data, .wasm.code, and .wasm.framework parts
+          return Promise.all([
+            mergeFiles(getParts("MotoRoadRash3D-2.data.unityweb", 1, 4)),
+            mergeFiles(getParts("MotoRoadRash3D-2.wasm.code.unityweb", 1, 1)), // adjust part count if needed
+            mergeFiles(getParts("MotoRoadRash3D-2.wasm.framework.unityweb", 1, 1)) // adjust part count if needed
+          ]).then(([dataUrl, wasmCodeUrl, wasmFrameworkUrl]) => {
+            config.dataUrl = dataUrl;
+            config.wasmCodeUrl = wasmCodeUrl;
+            config.wasmFrameworkUrl = wasmFrameworkUrl;
+
+            // 4. Turn config back into a Blob JSON file
+            let blob = new Blob([JSON.stringify(config)], { type: "application/json" });
+            let blobUrl = URL.createObjectURL(blob);
+
+            // 5. Instantiate Unity with blob URL
+            window.gameInstance = UnityLoader.instantiate("gameContainer", blobUrl, {
+              onProgress: UnityProgress,
+              Module: {
+                onRuntimeInitialized: function () {
+                  resizeUnityContainer();
+                  let loadingText = document.querySelector("#loading-text");
+                  if (loadingText) loadingText.remove();
+                  // Hide Unity loading screen elements
+                  UnityProgress(window.gameInstance, 'complete');
+                }
+              }
+            });
+          });
+        })
+        .catch(err => {
+          console.error("Unity load failed:", err);
+        });
+    });
+  </script>
+</head>
+
+<body style="margin:0; padding:0; background:#000;">
+  <div class="webgl-content">
+    <div id="gameContainer" style="width: 900px; height: 563px;"></div>
+    <div class="footer">
+      <div class="webgl-logo"></div>
+      <div class="fullscreen" onclick="gameInstance.SetFullscreen(1)"></div>
+      <div class="title">Moto Road Rash 3D</div>
+    </div>
+  </div>
+</body>
+</html>
+  ]]></content>
+</gamePage>
