@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gamePage>
+  <content><![CDATA[
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, shrink-to-fit=no" />
+  <title>AboutBlank</title>
+  <link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/unknownsowner/imagebackground@main/updatedURIcon.png" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/AndreajnRcm4/b398dl2h74v@9a23fbb2373d743a564873251cbb57736ebc1f73/style.css" type="text/css" />
+
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      background: url('https://cdn.jsdelivr.net/gh/unknownsowner/imagebackground@main/BackgroundRealm.png') no-repeat center center;
+      background-size: cover;
+    }
+
+    #loading-screen {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: url('https://cdn.jsdelivr.net/gh/unknownsowner/imagebackground@main/BackgroundRealm.png') no-repeat center center;
+      background-size: cover;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      z-index: 9999;
+    }
+
+    #loading-screen img {
+      width: 150px;
+      height: 150px;
+      margin-bottom: 20px;
+    }
+
+    #loading-bar {
+      width: 300px;
+      height: 20px;
+      background-color: #333;
+      border-radius: 10px;
+      overflow: hidden;
+    }
+
+    #loading-progress {
+      height: 100%;
+      width: 0%;
+      background-color: #00ffcc;
+      transition: width 7s linear;
+    }
+
+    #game-object {
+      display: none;
+    }
+  </style>
+
+  <script>
+    function startLoading() {
+      document.getElementById("loading-progress").style.width = "100%";
+      setTimeout(function() {
+        document.getElementById("loading-screen").style.display = "none";
+        document.getElementById("game-object").style.display = "block";
+      }, 7000);
+    }
+  </script>
+</head>
+
+<body onload="startLoading();">
+  <!-- Custom loading screen -->
+  <div id="loading-screen">
+    <img src="https://cdn.jsdelivr.net/gh/unknownsowner/imagebackground@main/updatedURIcon.png" alt="Loading Icon" />
+    <div id="loading-bar">
+      <div id="loading-progress"></div>
+    </div>
+  </div>
+
+
+
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, shrink-to-fit=no" />
+    <link rel="stylesheet" href="https://36043189-480959866522093217.preview.editmysite.com/uploads/b/139890129-743801889220072865/files/assets/css/app.css" type="text/css" />
+    <title>Basketball Stars</title>
+
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+</head>
+
+<body>
+    <div id="content"></div>
+    <div id="orientation"></div>
+    <div id="loader">Loading ...</div>
+    <script type="text/javascript" src="https://imasdk.googleapis.com/js/sdkloader/ima3.js"></script>
+
+    <script type="text/javascript" src="https://36043189-480959866522093217.preview.editmysite.com/uploads/b/139890129-743801889220072865/files/assets/lib/nape.min.js">
+        var nape ="nape.min.js";
+    </script>
+
+    <script type="text/javascript" src="https://36043189-480959866522093217.preview.editmysite.com/uploads/b/139890129-743801889220072865/files/assets/lib/jquery-3.1.1.min.js"></script>
+    <script type="text/javascript" src="https://36043189-480959866522093217.preview.editmysite.com/uploads/b/139890129-743801889220072865/files/assets/lib/easeljs-0.8.2.combined.js"></script>
+    <script type="text/javascript" src="https://36043189-480959866522093217.preview.editmysite.com/uploads/b/139890129-743801889220072865/files/assets/lib/bluebird.min.js"></script>
+    <script type="text/javascript" src="https://36043189-480959866522093217.preview.editmysite.com/uploads/b/139890129-743801889220072865/files/assets/lib/phaser.min.js"></script>
+    <script type="text/javascript" src="https://36043189-480959866522093217.preview.editmysite.com/uploads/b/139890129-743801889220072865/files/assets/lib/phaser-cachebuster.min.js"></script>
+    <script type="text/javascript" src="https://36043189-480959866522093217.preview.editmysite.com/uploads/b/139890129-743801889220072865/files/assets/lib/phaser-super-storage.min.js"></script>
+    <script type="text/javascript" src="https://36043189-480959866522093217.preview.editmysite.com/uploads/b/139890129-743801889220072865/files/assets/lib/dragonBones.min.js"></script>
+
+
+    <script type="text/javascript">
+        var notIE11 = (typeof (Event) ==='function');
+
+        window.SDK_OPTIONS = {
+            gameId: "ycc9yyyfyazoiibce061j1b7jx91tt8a",
+            onEvent: function (event) {
+                switch (event.name) {
+                    case "SDK_GAME_START":
+                        // advertisement done, resume game logic and unmute audio
+                        var event;
+                        if (notIE11) {
+                            event = new Event("SDK_GAME_START");
+                        } else {
+                            event = document.createEvent('Event');
+                            event.initEvent('SDK_GAME_START', true, true);
+                        }
+                        document.getElementById("content").dispatchEvent(event);
+                        break;
+                    case "SDK_GAME_PAUSE":
+                        // pause game logic / mute audio
+                        var event;
+                        if (notIE11) {
+                            event = new Event("SDK_GAME_PAUSE");
+                        } else {
+                            event = document.createEvent('Event');
+                            event.initEvent('SDK_GAME_PAUSE', true, true);
+                        }
+                        document.getElementById("content").dispatchEvent(event);
+                        break;
+                    case "SDK_READY":
+                        // this event is triggered when your user doesn't want personalised targeting of ads and such
+                        console.log("SDK_READY");
+                        break;
+                }
+            },
+        };
+        (function (a, b, c) {
+            var d = a.getElementsByTagName(b)[0];
+            a.getElementById(c) || (a = a.createElement(b), a.id = c, a.src ="https://cdn.jsdelivr.net/gh/st39/sdk@main/sdk.js", d.parentNode.insertBefore(a, d))
+        })(document, "script", "gamemonetize-sdk"); 
+    </script>
+<script type="text/javascript" src="https://36043189-480959866522093217.preview.editmysite.com/uploads/b/139890129-743801889220072865/files/bs.min.js"></script></body>
+<script src="https://cdn.jsdelivr.net/gh/st39/sdk@main/api.js"></script>
+</html>
+
+</body>
+</html>
+  ]]></content>
+</gamePage>
