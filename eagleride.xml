@@ -1,3 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gamePage>
+  <content><![CDATA[
+<!DOCTYPE html>
 
 <html>
 <base href="https://cdn.jsdelivr.net/gh/bubbls/UGS-Assets@1cbec0854b89d36e3d5f78eb450232e6a03eaec2/eagle%20ride/">
@@ -38,3 +42,9 @@
 </body>
 
 </html>
+
+
+</body>
+</html>
+  ]]></content>
+</gamePage>
